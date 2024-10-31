@@ -1,42 +1,42 @@
-html, body{
+/* Reset CSS */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    margin: 0;
     overflow: hidden;
     background-color: #222;
+    min-height: 100vh; /* Garantit la hauteur minimale */
 }
 
 .container {
     position: relative;
     width: 100vw;
     height: 100vh;
+    /* Optionnel : éviter le défilement horizontal sur certains navigateurs */
+    overflow: hidden;
 }
 
 .carre {
     position: absolute;
-    background-color: red;
     border-radius: 10%;
+    /* Optionnel : ajouter une transition douce pour d'autres propriétés */
+    transition: transform 0.3s ease;
     animation: changeColor 2s linear infinite;
 }
 
-/* Animation pour changer de couleur en boucle */
 @keyframes changeColor {
-    0% {
-        background-color: red;
-    }
-    25% {
-        background-color: green;
-    }
-    50% {
-        background-color: blue;
-    }
-    75% {
-        background-color: yellow;
-    }
-    100% {
-        background-color: red;
-    }
+    0% { background-color: #0077BB; }    /* Bleu clair */
+    10% { background-color: #EE7733; }   /* Orange */
+    20% { background-color: #FFEE33; }   /* Jaune */
+    30% { background-color: #009988; }   /* Turquoise */
+    40% { background-color: #33BBEE; }   /* Bleu ciel */
+    50% { background-color: #CC3311; }   /* Rouge foncé */
+    60% { background-color: #EE3377; }   /* Rose */
+    70% { background-color: #BBBBBB; }   /* Gris */
+    80% { background-color: #44AA99; }   /* Turquoise moyen */
+    90% { background-color: #004488; }   /* Bleu marine */
+    100% { background-color: #0077BB; }  /* Retour au bleu clair */
 }
