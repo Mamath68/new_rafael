@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('container');
     const squares = [];
     const SETTINGS = {
-        maxCollisions: 4,
+        maxCollisions: 5,
         initialSquares: 5,
         minSize: 10,
         initialSize: 50,
         shrinkFactor: 0.75,
-        speedRange: { min: -3, max: 3 },
-        clickOffset: 25 // Moitié de la taille initiale pour centrage
+        speedRange: {min: -3, max: 3},
+        clickOffset: 25
     };
 
     class Square {
@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function detectCollision(square1, square2) {
         return square1.x < square2.x + square2.width &&
-               square1.x + square1.width > square2.x &&
-               square1.y < square2.y + square2.height &&
-               square1.y + square1.height > square2.y;
+            square1.x + square1.width > square2.x &&
+            square1.y < square2.y + square2.height &&
+            square1.y + square1.height > square2.y;
     }
 
     function handleCollision(square1, square2) {
